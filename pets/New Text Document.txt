@@ -1,0 +1,33 @@
+
+    if (isset($_POST['update'])) {
+        $name = $row['name'];
+        $email = $row['email'];
+        $phone = $row['phone'];
+        $address = $row['address'];
+        $password = $row['password'];
+        $job = $row['job'];
+
+        if(isset($_POST['update'])){
+            $name = $_POST['name'];
+            $email = $_POST['email'];
+            $phone = $_POST['phone'];
+            $address = $_POST['address'];
+            $password = $_POST['password'];
+            $job = $_POST['job'];
+    
+
+
+        $update = "UPDATE `users` SET `name`='$name' , `email` ='$email' , `phone`='$phone' , `address` = '$address' , `password`='$password' ,`job`='$job'  WHERE id = $id";
+        $u = mysqli_query($conn, $update);
+        header('location:/pets/setting.php');
+    }
+
+    }
+
+
+$name = "";
+$email = "";
+$phone = "";
+$address = "";
+$password = "";
+$job = "";
